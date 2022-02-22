@@ -14,11 +14,17 @@ const Header = () => {
 		<View style={styles.container}>
 			<Logo />
 			<View style={styles.iconsContainer}>
-				<Icon source={{ uri: AddOutlinedLight }} />
-				<Icon source={{ uri: HeartOutlinedLight }} />
+				<Icon
+					customStyles={styles.marginRightTen}
+					source={{ uri: AddOutlinedLight }}
+				/>
+				<Icon
+					customStyles={styles.marginRightTen}
+					source={{ uri: HeartOutlinedLight }}
+				/>
 				<Icon
 					source={{ uri: MessagesOutlinedLight }}
-					beforeItem={<Badge title="22" isActivated />}
+					beforeItem={<Badge title="22" />}
 				/>
 			</View>
 		</View>
@@ -32,9 +38,12 @@ const styles = StyleSheet.create({
 		justifyContent: "space-between",
 		alignItems: "center",
 		flexDirection: "row",
-		marginHorizontal: 20,
+		marginHorizontal: 15,
 	},
 	iconsContainer: {
 		flexDirection: "row",
+	},
+	marginRightTen: {
+		marginRight: 10,
 	},
 });
