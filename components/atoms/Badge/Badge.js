@@ -1,15 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const Badge = ({ customStyles, title, isActivated }) => {
+const Badge = ({ customStyles, title }) => {
 	return (
-		<View
-			style={[
-				isActivated ? styles.badgeActivated : styles.badgeInactive,
-				customStyles,
-			]}
-		>
-			<Text>{title}</Text>
+		<View style={[styles.badgeActivated, customStyles]}>
+			<Text style={styles.label}>{title}</Text>
 		</View>
 	);
 };
@@ -19,7 +14,7 @@ export default Badge;
 const styles = StyleSheet.create({
 	badgeActivated: {
 		position: "absolute",
-		left: 20,
+		left: 10,
 		bottom: 18,
 		width: 25,
 		height: 18,
@@ -29,8 +24,8 @@ const styles = StyleSheet.create({
 		backgroundColor: "#FF3250",
 		zIndex: 1,
 	},
-	badgeInactive: {
-		color: "#fff",
+	label: {
+		color: "#ffffff",
 		fontWeight: "600",
 	},
 });

@@ -5,7 +5,7 @@ const Icon = ({ source, customStyles, afterItem, beforeItem }) => {
 	return (
 		<TouchableOpacity>
 			{beforeItem}
-			<Image style={[styles.icon, customStyles]} source={source} />
+			<Image style={[styles.icon].concat(customStyles)} source={source} />
 			{afterItem}
 		</TouchableOpacity>
 	);
@@ -17,7 +17,6 @@ const styles = StyleSheet.create({
 	icon: {
 		width: 30,
 		height: 30,
-		marginLeft: 10,
 		resizeMode: "contain",
 	},
 });
